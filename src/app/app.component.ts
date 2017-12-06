@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Retro Barcode Generator';
   imageArray = [];
-
+  //
   fillImageArray() {
     for (let y = 0; y < 10; y++) {
       const randNum = (Math.floor(Math.random() * 6) ) + 1;
