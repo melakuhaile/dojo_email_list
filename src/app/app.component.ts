@@ -6,12 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Dojo Mail';
-  emails = [
-    {email: 'bill@gates.com', important: true, subject: 'New Windows', content: 'Windows XI will launch in 2100.'},
-    {email: 'ada@lovelace.com', important: true, subject: 'Programming', content: 'Echantress of Numbers.'},
-    {email: 'john@carmac.com', important: false, subject: 'Updated Algo', content: 'New Algorithm for shadow volumes.'},
-    {email: 'gabe@gates.com', important: false, subject: 'HL3!', content: 'Just kidding...'}
-  ]
-  //myColor = 'red';
+  title = 'Retro Barcode Generator';
+  imageArray = [];
+
+  fillImageArray() {
+    for (let y = 0; y < 10; y++) {
+      const randNum = (Math.floor(Math.random() * 6) ) + 1;
+      if (randNum === 1) {
+        this.imageArray.push('Blue');
+      } else if (randNum === 2) {
+        this.imageArray.push('Red');
+      } else if (randNum === 3) {
+        this.imageArray.push('Green');
+      } else if (randNum === 4) {
+        this.imageArray.push('DarkBlue ');
+      } else if (randNum === 5) {
+        this.imageArray.push('Yellow');
+      } else if (randNum === 6) {
+        this.imageArray.push('Violet');
+      } else if (randNum === 7) {
+        this.imageArray.push('AfricanViolet');
+      }
+    }
+  }
+  ngOnInit() {
+    this.fillImageArray();
+  }
 }
